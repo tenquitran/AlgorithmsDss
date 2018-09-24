@@ -6,7 +6,7 @@ namespace GraphImplementations
 	// Vertex colors for the graph algorithms.
 	enum class EVertexColor
 	{
-		White,
+		White, 
 		Gray,
 		Black
 	};

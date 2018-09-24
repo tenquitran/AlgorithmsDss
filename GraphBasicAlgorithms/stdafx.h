@@ -13,6 +13,8 @@
 
 // Additional headers our program requires.
 
+#include <limits>
+
 #include "../CommonLib/CommonLib.h"
 
 #include "../GraphImplementations/GraphImplementations.h"

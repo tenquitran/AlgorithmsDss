@@ -9,8 +9,7 @@ using namespace GraphImplementations;
 
 template <typename Vertex, typename Matrix, Matrix matrixDefault, Matrix matrixEdge>
 GraphMixedAdjMatrix<Vertex, Matrix, matrixDefault, matrixEdge>::GraphMixedAdjMatrix(size_t maxVertexCount)
-	: MaxVertexCount(maxVertexCount),
-	  MatrixSizeElements(MaxVertexCount * MaxVertexCount)
+	: MaxVertexCount(maxVertexCount)
 {
 	if (MaxVertexCount < 1)
 	{
@@ -38,6 +37,12 @@ GraphMixedAdjMatrix<Vertex, Matrix, matrixDefault, matrixEdge>::~GraphMixedAdjMa
 }
 
 template <typename Vertex, typename Matrix, Matrix matrixDefault, Matrix matrixEdge>
+size_t GraphMixedAdjMatrix<Vertex, Matrix, matrixDefault, matrixEdge>::getMaxVertexCount() const
+{
+	return MaxVertexCount;
+}
+
+template <typename Vertex, typename Matrix, Matrix matrixDefault, Matrix matrixEdge>
 bool GraphMixedAdjMatrix<Vertex, Matrix, matrixDefault, matrixEdge>::addVertex(const Vertex& vertex)
 {
 	if (m_vertices.size() >= MaxVertexCount)
@@ -58,8 +63,8 @@ bool GraphMixedAdjMatrix<Vertex, Matrix, matrixDefault, matrixEdge>::addEdgeDire
 	// Thus, for adjacency matrix representation used by simple BFS and DFS, 
 	// the edge direction is not required. But in the future, we may have to use an edge weight instead.
 
-	if (   source      >= MatrixSizeElements
-		|| destination >= MatrixSizeElements)
+	if (   source      >= MaxVertexCount
+		|| destination >= MaxVertexCount)
 	{
 		assert(false); return false;
 	}
@@ -77,8 +82,8 @@ bool GraphMixedAdjMatrix<Vertex, Matrix, matrixDefault, matrixEdge>::addEdgeUndi
 	// Thus, for adjacency matrix representation used by simple BFS and DFS, 
 	// the edge direction is not required. But in the future, we may have to use an edge weight instead.
 
-	if (   source      >= MatrixSizeElements
-		|| destination >= MatrixSizeElements)
+	if (   source      >= MaxVertexCount
+		|| destination >= MaxVertexCount)
 	{
 		assert(false); return false;
 	}

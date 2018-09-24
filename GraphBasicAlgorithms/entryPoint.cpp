@@ -68,19 +68,17 @@ int _tmain(int /*argc*/, _TCHAR* /*argv[]*/)
 	g1.addEdgeDirected(1, 0);
 
 	g1.addEdgeUndirected(3, 4);
+	
+#if 0
+	g1.addEdgeDirected(2, 2);    // add loop
+#endif
 
 	std::vector<int> distances;
 	std::vector<int> predecessors;
 
-	bool res1 = BFS::bfsAdjacencyMatrix_ReachablePaths(g1, 2, distances, predecessors);
+	bool res1 = BFS::bfsAdjacencyMatrix_ReachablePaths_CanHaveLoops(g1, 2, distances, predecessors);
 
-#if 0
-	static bool bfsAdjacencyMatrix_ReachablePaths(
-		const GraphMixedAdjMatrix<Vertex, Matrix, matrixDefault, matrixEdge>& graph,
-		size_t source,
-		std::vector<int>& distances,
-		std::vector<int>& preds);
-#endif
+	bool res2 = BFS::bfsAdjacencyMatrix_ReachablePaths_NoLoops(g1, 2, distances, predecessors);
 
 #endif
 

@@ -35,6 +35,9 @@ namespace GraphImplementations
 		//             destination - index of the destination vertex (zero-based).
 		bool addEdgeUndirected(size_t source, size_t destination);
 
+		// Get maximum number of vertices (the adjacency matrix width).
+		size_t getMaxVertexCount() const;
+
 	private:
 		GraphMixedAdjMatrix(const GraphMixedAdjMatrix&) = delete;
 		GraphMixedAdjMatrix& operator=(const GraphMixedAdjMatrix&) = delete;
@@ -45,12 +48,11 @@ namespace GraphImplementations
 		// NOTE: using the actual (existing) number of matrices may cause non-obvious bugs on traversing the graph.
 		const size_t MaxVertexCount;
 
-		// Adjacency matrix size, in elements.
-		const size_t MatrixSizeElements;
-
 		// Vertices of the graph.
 		std::vector<Vertex> m_vertices;
 
+	// The adjacency matrix is public to make the graph algorithms more clear.
+	public:
 		// Adjacency matrix.
 		//
 		// NOTE: a single-dimensional array simulating a matrix would make code less readable and slower 
