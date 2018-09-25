@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <queue>
+#include <map>
+#include <list>
 #include <memory>
 #include <iostream>
 #include <cassert>
@@ -16,3 +18,4 @@
 #include "EdgeDirection.h"
 
 #include "GraphMixedAdjMatrix.h"
+#include "GraphMixedAdjLists.h"

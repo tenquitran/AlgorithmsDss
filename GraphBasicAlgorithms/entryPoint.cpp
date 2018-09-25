@@ -82,5 +82,18 @@ int _tmain(int /*argc*/, _TCHAR* /*argv[]*/)
 
 #endif
 
+
+#if 1
+	GraphMixedAdjLists< VertexDataStatic<int, double> > g2;
+
+	for (int i = {}; i < 5; ++i)
+	{
+		g2.addVertex(i, VertexDataStatic<int, double>(i, i));
+	}
+
+	g2.addVertex(0, VertexDataStatic<int, double>(1, 1.1));
+	
+#endif
+
 	return 0;
 }

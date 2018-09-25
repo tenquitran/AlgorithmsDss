@@ -51,6 +51,9 @@
     <ClInclude Include="EdgeDirection.h">
       <Filter>Edges</Filter>
     </ClInclude>
+    <ClInclude Include="GraphMixedAdjLists.h">
+      <Filter>Graphs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -72,6 +75,9 @@
     </None>
     <None Include="EdgeDirection.cpp">
       <Filter>Edges</Filter>
+    </None>
+    <None Include="GraphMixedAdjLists.cpp">
+      <Filter>Graphs</Filter>
     </None>
   </ItemGroup>
 </Project>
