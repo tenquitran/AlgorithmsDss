@@ -26,7 +26,7 @@ namespace GraphImplementations
 
 		bool addVertex(VertexLabel label, const VertexData& vertexData);
 
-		// TODO: fix. The vertex list should contain both labels and indices
+		// TODO: fix. The vertex list should contain both labels and data
 #if 0
 		// Add non-weighted edge (the "weight" will be considered equal to one).
 		// Parameters: source - source vertex;
