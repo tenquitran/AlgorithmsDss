@@ -19,33 +19,72 @@ GraphMixedAdjLists<Vertex>::GraphMixedAdjLists(size_t vertexCount)
 }
 #endif
 
-template <typename Vertex>
-GraphMixedAdjLists<Vertex>::GraphMixedAdjLists()
+template <typename Vertex, typename Weight, typename EdgeWeight>
+GraphMixedAdjLists<Vertex, Weight, EdgeWeight>::GraphMixedAdjLists()
 {
 }
 
-template <typename Vertex>
-GraphMixedAdjLists<Vertex>::~GraphMixedAdjLists()
+template <typename Vertex, typename Weight, typename EdgeWeight>
+GraphMixedAdjLists<Vertex, Weight, EdgeWeight>::~GraphMixedAdjLists()
 {
 }
 
-template <typename Vertex>
-bool GraphMixedAdjLists<Vertex>::addVertex(size_t index, const Vertex& v)
+template<typename VertexLabel, typename VertexData, typename EdgeWeight>
+bool GraphMixedAdjLists<VertexLabel, VertexData, EdgeWeight>::addVertex(VertexLabel label, const VertexData& vertexData)
 {
-	// Add empty vertex list.
+	// Add vertex data.
 
-	std::pair<std::map<VertexIndex, VertexList>::iterator, bool> res =
-		m_vertices.emplace(std::pair<VertexIndex, VertexList>(index, VertexList()));
+	std::pair< std::map<VertexLabel, VertexData>::iterator, bool > vertexItr = 
+		m_vertices.insert(std::pair<VertexLabel, VertexData>(label, vertexData));
 
-	if (!res.second)
+	if (!vertexItr.second)
 	{
-		std::cerr << "Duplicate index: " << index << '\n';
+		std::cerr << "Duplicate vertex label (graph): " << label << '\n';
 		return false;
 	}
 
-	// Add the leading vertex to the vertex list.
-	
-	res.first->second.push_back(v);
+	// Add adjacency lists data (initially empty).
+
+	std::pair< std::map<VertexLabel, VertexList>::iterator, bool > adjListItr = 
+		m_adjacencyLists.insert(std::pair<VertexLabel, VertexList>(label, VertexList()));
+
+	if (!adjListItr.second)
+	{
+		std::cerr << "Duplicate vertex label (adjacency lists): " << label << '\n';
+		return false;
+	}
 
 	return true;
 }
+
+#if 0
+template <typename Vertex, typename Weight>
+bool GraphMixedAdjLists<Vertex, Weight>::addEdge(size_t source, size_t destination)
+{
+	// Find the source vertex.
+
+	std::map<VertexIndex, VertexList>::iterator srcItr = m_vertices.find(source);
+
+	if (m_vertices.cend() == srcItr)
+	{
+		std::cerr << "Source vertex not found: " << source << '\n';
+		return false;
+	}
+
+	for (auto& itr : srcItr->second)
+	{
+		itr->
+	}
+
+	srcItr->second.
+
+	return ;
+}
+
+template <typename Vertex, typename Weight>
+bool GraphMixedAdjLists<Vertex, Weight>::addEdge(size_t source, size_t destination, Weight weight)
+{
+	// TODO: stub
+	return false;
+}
+#endif

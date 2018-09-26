@@ -84,14 +84,21 @@ int _tmain(int /*argc*/, _TCHAR* /*argv[]*/)
 
 
 #if 1
-	GraphMixedAdjLists< VertexDataStatic<int, double> > g2;
+	//GraphMixedAdjLists< VertexDataStatic<int, double>, double > g2;
+	
+	//template<typename VertexLabel, typename VertexData, typename EdgeWeight>
+	GraphMixedAdjLists<size_t, VertexDataStatic<int, double>, double > g2;
 
-	for (int i = {}; i < 5; ++i)
+#if 1
+	for (size_t i = {}; i < 5; ++i)
 	{
 		g2.addVertex(i, VertexDataStatic<int, double>(i, i));
+
+		//g2.addVertex(i, VertexDataStatic<int, double>(i, i));
 	}
 
-	g2.addVertex(0, VertexDataStatic<int, double>(1, 1.1));
+	g2.addVertex(0, VertexDataStatic<int, double>(3, 3.3));
+#endif
 	
 #endif
 
