@@ -30,6 +30,9 @@
     <ClInclude Include="BFS.h">
       <Filter>Algorithms</Filter>
     </ClInclude>
+    <ClInclude Include="DFS.h">
+      <Filter>Algorithms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -41,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BFS.cpp">
+      <Filter>Algorithms</Filter>
+    </None>
+    <None Include="DFS.cpp">
       <Filter>Algorithms</Filter>
     </None>
   </ItemGroup>

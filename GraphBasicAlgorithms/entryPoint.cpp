@@ -69,12 +69,14 @@ int _tmain(int /*argc*/, _TCHAR* /*argv[]*/)
 
 	g1.addEdgeUndirected(3, 4);
 	
-#if 0
+#if 1
 	g1.addEdgeDirected(2, 2);    // add loop
 #endif
 
 	std::vector<int> distances;
 	std::vector<int> predecessors;
+
+	DFS::dfsAdjacencyMatrix_ReachablePaths_CanHaveLoops(g1, 2, distances, predecessors);
 
 	bool res1 = BFS::bfsAdjacencyMatrix_ReachablePaths_CanHaveLoops(g1, 2, distances, predecessors);
 
