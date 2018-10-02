@@ -1,4 +1,4 @@
-// GraphBasicAlgorithms.cpp : Defines the entry point for the console application.
+// GraphBasicAlgorithms project: Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -69,7 +69,7 @@ int _tmain(int /*argc*/, _TCHAR* /*argv[]*/)
 
 	g1.addEdgeUndirected(3, 4);
 	
-#if 1
+#if 0
 	g1.addEdgeDirected(2, 2);    // add loop
 #endif
 

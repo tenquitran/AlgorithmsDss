@@ -1,0 +1,21 @@
+#include "stdafx.h"
+
+//////////////////////////////////////////////////////////////////////////
+
+using namespace AlgorithmsDss_CStyle;
+
+//////////////////////////////////////////////////////////////////////////
+
+
+GraphBase::GraphBase()
+{
+}
+
+GraphBase::~GraphBase()
+{
+}
+
+void GraphBase::addVertex(VertexTag vertexTag)
+{
+    m_vertices.push_back(vertexTag);
+}

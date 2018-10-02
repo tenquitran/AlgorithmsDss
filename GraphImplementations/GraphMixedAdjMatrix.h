@@ -45,7 +45,7 @@ namespace GraphImplementations
 	private:
 		// Maximum number of vertices in the graph.
 		//
-		// NOTE: using the actual (existing) number of matrices may cause non-obvious bugs on traversing the graph.
+		// NOTE: using the actual (existing) number of vertices may cause non-obvious bugs on traversing the graph.
 		const size_t MaxVertexCount;
 
 		// Vertices of the graph.
