@@ -109,6 +109,9 @@ EdgeWeight GraphMixedAdjMatrix::getEdgeWeight(VertexTag src, VertexTag dst) cons
         throw EXCEPTION_A_FMT("No edge (%I64u, %I64u)", static_cast<unsigned __int64>(src), static_cast<unsigned __int64>(dst));
     }
 
+    // The edge weight can be equal to EdgeWeightDefault (that is, no edge).
+    assert(false);
+
     return m_adjMatrix[src][dst];
 }
 #endif
