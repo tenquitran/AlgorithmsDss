@@ -32,50 +32,50 @@ void shortestPaths_Dijkstra_AdjMatrix(
     {
         // Find an unvisited vertex with the shortest distance from the source vertex.
 
-        //bool found = false;
+        bool found = false;
 
-        //VertexIndex currVertex = -1;
+        //VertexIndex currVertex = -1;    // causes warnings when used as an index in the visited vertices collection
         VertexTag currVertex = {};
 
         int shortestDistance = (std::numeric_limits<int>::max)();
 
         for (size_t i = {}; i < VertexCount; ++i)
         {
-            if (!visited[i]
+            if (   !visited[i]
                 && distances[i] < shortestDistance)
             {
                 currVertex = i;
                 shortestDistance = distances[i];
-                //found = true;
+                found = true;
             }
         }
 
-        //if (!found)
-        if ((std::numeric_limits<int>::max)() == shortestDistance)
+        if (!found)
+        //if ((std::numeric_limits<int>::max)() == shortestDistance)   // error-prone
         {
             std::cout << "No unvisited reachable vertices left" << std::endl;
             return;
         }
 
-        // Update the shortest paths info for neighbour vertices.
+        // Update the shortest paths info for adjacent vertices.
 
         visited[currVertex] = true;
 
-        for (size_t dest = {}; dest < VertexCount; ++dest)
+        for (size_t adjVertex = {}; adjVertex < VertexCount; ++adjVertex)
         {
-            if (dest == currVertex)
+            if (adjVertex == currVertex)
                 {continue;}
 
-            EdgeWeight weight = graph.getEdgeWeight(currVertex, dest);
+            EdgeWeight weight = graph.getEdgeWeight(currVertex, adjVertex);
 
             // Compute distances using long long int (as it's guaranteed to be larger than int).
             long long int newDistance = distances[currVertex] + weight;
 
-            if (newDistance < distances[dest])
+            if (newDistance < distances[adjVertex])
             {
                 // TODO: warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data
-                distances[dest] = newDistance;
-                predecessors[dest] = currVertex;
+                distances[adjVertex]    = newDistance;
+                predecessors[adjVertex] = currVertex;
             }
         }
     }
