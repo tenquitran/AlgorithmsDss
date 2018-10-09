@@ -16,6 +16,9 @@
     <Filter Include="GraphImplementations">
       <UniqueIdentifier>{8a1a8679-b569-42de-9c9a-3c3b68d77596}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GraphAlgorithms">
+      <UniqueIdentifier>{763f3ef1-023d-4d32-8370-aee1f3c85506}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -33,6 +36,12 @@
     <ClInclude Include="GraphMixedAdjMatrix.h">
       <Filter>GraphImplementations</Filter>
     </ClInclude>
+    <ClInclude Include="GraphMixedAdjLists.h">
+      <Filter>GraphImplementations</Filter>
+    </ClInclude>
+    <ClInclude Include="Dijkstra_ShortestPaths.h">
+      <Filter>GraphAlgorithms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -46,6 +55,12 @@
     </ClCompile>
     <ClCompile Include="GraphMixedAdjMatrix.cpp">
       <Filter>GraphImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphMixedAdjLists.cpp">
+      <Filter>GraphImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="Dijkstra_ShortestPaths.cpp">
+      <Filter>GraphAlgorithms</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

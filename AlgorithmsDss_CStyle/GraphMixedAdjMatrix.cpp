@@ -2,6 +2,7 @@
 
 //////////////////////////////////////////////////////////////////////////
 
+using namespace CommonLib;
 using namespace AlgorithmsDss_CStyle;
 
 //////////////////////////////////////////////////////////////////////////
@@ -81,3 +82,33 @@ void GraphMixedAdjMatrix::addEdgeUndirected(VertexTag src, VertexTag dst, EdgeWe
     m_adjMatrix[src][dst] = weight;
     m_adjMatrix[dst][src] = weight;
 }
+
+#if 0
+bool GraphMixedAdjMatrix::getEdgeWeight(VertexTag src, VertexTag dst, EdgeWeight& weight) const
+{
+    weight = {};
+
+    if (   src >= MaximumVertexCount
+        || dst >= MaximumVertexCount)
+    {
+        std::cerr << "Invalid source (" << src << ") and/or destination (" << dst << ") vertex indices\n";
+        assert(false); return false;
+    }
+
+    weight = m_adjMatrix[src][dst];
+    return true;
+}
+#else
+EdgeWeight GraphMixedAdjMatrix::getEdgeWeight(VertexTag src, VertexTag dst) const
+{
+    if (   src >= MaximumVertexCount
+        || dst >= MaximumVertexCount)
+    {
+        assert(false);
+        // Windows-specific: typecast to output size_t both in 32- and 64-bit versions.
+        throw EXCEPTION_A_FMT("No edge (%I64u, %I64u)", static_cast<unsigned __int64>(src), static_cast<unsigned __int64>(dst));
+    }
+
+    return m_adjMatrix[src][dst];
+}
+#endif

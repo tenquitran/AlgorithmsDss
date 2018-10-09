@@ -23,3 +23,7 @@
 // Graph implementations.
 #include "GraphBase.h"
 #include "GraphMixedAdjMatrix.h"
+#include "GraphMixedAdjLists.h"
+
+// Graph algorithms.
+#include "Dijkstra_ShortestPaths.h"

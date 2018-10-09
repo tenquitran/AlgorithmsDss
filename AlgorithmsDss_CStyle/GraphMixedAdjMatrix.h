@@ -35,6 +35,22 @@ namespace AlgorithmsDss_CStyle
         //             weight - edge weight (by default, one).
         virtual void addEdgeUndirected(VertexTag src, VertexTag dst, EdgeWeight weight = 1) override;
 
+#if 0
+        // Get weight of the edge.
+        // Parameters: src - source vertex;
+        //             dst - destination vertex;
+        //             weight - edge weight (valid only if the function returns true).
+        // Returns: true if the edge exists and has weight; false otherwise.
+        virtual bool getEdgeWeight(VertexTag src, VertexTag dst, EdgeWeight& weight) const override;
+#else
+        // Get weight of the edge.
+        // Parameters: src - source vertex;
+        //             dst - destination vertex.
+        // Returns: edge weight if the edge exists.
+        // Throws: ExceptionA.
+        virtual EdgeWeight getEdgeWeight(VertexTag src, VertexTag dst) const override;
+#endif
+
     private:
         // Maximum number of vertices in the graph.
         // For adjacency matrix representation, sets the matrix size.
@@ -43,6 +59,8 @@ namespace AlgorithmsDss_CStyle
         // A matrix row is not guaranteed to be completely filled - and if it's not, your indices will be incorrect.
         const size_t MaximumVertexCount;
 
+    //public:
+    private:
         // Adjacency matrix.
         //
         // NOTE: a single-dimensional array simulating a matrix would make code less readable and slower 
