@@ -46,7 +46,7 @@ namespace AlgorithmsDss_CStyle
         // Get weight of the edge.
         // Parameters: src - source vertex;
         //             dst - destination vertex.
-        // Returns: edge weight if the edge exists.
+        // Returns: edge weight if the edge exists; EdgeWeightDefault otherwise.
         // Throws: ExceptionA.
         virtual EdgeWeight getEdgeWeight(VertexTag src, VertexTag dst) const override;
 #endif

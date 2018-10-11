@@ -2,6 +2,7 @@
 
 //////////////////////////////////////////////////////////////////////////
 
+using namespace CommonLib;
 using namespace AlgorithmsDss_CStyle;
 
 //////////////////////////////////////////////////////////////////////////
@@ -67,6 +68,13 @@ void shortestPaths_Dijkstra_AdjMatrix(
                 {continue;}
 
             EdgeWeight weight = graph.getEdgeWeight(currVertex, adjVertex);
+
+            if (weight < 0)
+            {
+                // Dijkstra's algorithm cannot work with negative edge weights.
+                throw EXCEPTION_A_FMT("Negative edge weight detected: (%I64u, %I64u)", 
+                    static_cast<unsigned __int64>(currVertex), static_cast<unsigned __int64>(adjVertex));
+            }
 
             // Compute distances using long long int (as it's guaranteed to be larger than int).
             long long int newDistance = distances[currVertex] + weight;

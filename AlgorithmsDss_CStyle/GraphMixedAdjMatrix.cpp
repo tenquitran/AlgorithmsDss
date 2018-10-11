@@ -104,13 +104,18 @@ EdgeWeight GraphMixedAdjMatrix::getEdgeWeight(VertexTag src, VertexTag dst) cons
     if (   src >= MaximumVertexCount
         || dst >= MaximumVertexCount)
     {
-        assert(false);
         // Windows-specific: typecast to output size_t both in 32- and 64-bit versions.
-        throw EXCEPTION_A_FMT("No edge (%I64u, %I64u)", static_cast<unsigned __int64>(src), static_cast<unsigned __int64>(dst));
+        throw EXCEPTION_A_FMT("Edge (%I64u, %I64u): adjacency matrix limit(s) exceeded", 
+            static_cast<unsigned __int64>(src), static_cast<unsigned __int64>(dst));
     }
 
-    // The edge weight can be equal to EdgeWeightDefault (that is, no edge).
-    assert(false);
+    // WARNING: if the source and destination vertices exist, 
+    // two cases are possible for a graph with non-negative edge weights:
+    //          1) an edge (source, destination) exists - thus, its weight is positive;
+    //          2) there is no edge (source, destination) - thus, the weight is EdgeWeightDefault.
+    // However, if your graph allows negative edge weights, there can be more variants.
+    assert(   m_adjMatrix[src][dst] > 0
+           || EdgeWeightDefault != m_adjMatrix[src][dst]);
 
     return m_adjMatrix[src][dst];
 }
