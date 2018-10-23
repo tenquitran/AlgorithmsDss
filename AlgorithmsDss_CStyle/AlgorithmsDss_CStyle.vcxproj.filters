@@ -19,6 +19,9 @@
     <Filter Include="GraphAlgorithms">
       <UniqueIdentifier>{763f3ef1-023d-4d32-8370-aee1f3c85506}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sorting">
+      <UniqueIdentifier>{5eb026db-c025-4295-817b-19b929697213}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -42,6 +45,12 @@
     <ClInclude Include="Dijkstra_ShortestPaths.h">
       <Filter>GraphAlgorithms</Filter>
     </ClInclude>
+    <ClInclude Include="SelectionSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectionSortTemplate.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -62,5 +71,13 @@
     <ClCompile Include="Dijkstra_ShortestPaths.cpp">
       <Filter>GraphAlgorithms</Filter>
     </ClCompile>
+    <ClCompile Include="SelectionSort.cpp">
+      <Filter>Sorting</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SelectionSortTemplate.cpp">
+      <Filter>Sorting</Filter>
+    </None>
   </ItemGroup>
 </Project>

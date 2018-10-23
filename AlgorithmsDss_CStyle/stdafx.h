@@ -20,6 +20,10 @@
 
 #include "../CommonLib/CommonLib.h"
 
+// Sorting algorithms.
+#include "SelectionSort.h"
+#include "SelectionSortTemplate.h"
+
 // Graph implementations.
 #include "GraphBase.h"
 #include "GraphMixedAdjMatrix.h"

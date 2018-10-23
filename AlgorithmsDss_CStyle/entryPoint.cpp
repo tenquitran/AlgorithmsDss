@@ -44,6 +44,14 @@ int _tmain(int argc, _TCHAR* argv[])
     }
 #endif
 
+    int arr[] = {12, 4, 7, -1, 5};
+
+    selectionSort(arr, _countof(arr));
+
+    double arr2[] = { 12.0, 4.0, 7.0, -1.0, 5.0 };
+
+    selectionSort(arr2, _countof(arr2));
+
     GraphMixedAdjMatrix g1(5);
 
     int tmp2 = 1;
