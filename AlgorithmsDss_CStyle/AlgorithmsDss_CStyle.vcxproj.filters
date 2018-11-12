@@ -22,6 +22,9 @@
     <Filter Include="Sorting">
       <UniqueIdentifier>{5eb026db-c025-4295-817b-19b929697213}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TreeImplementations">
+      <UniqueIdentifier>{f3f52d1f-3c68-45b8-86e3-15b7f3dd54f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -51,6 +54,21 @@
     <ClInclude Include="SelectionSortTemplate.h">
       <Filter>Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="BinaryTreeNode.h">
+      <Filter>TreeImplementations</Filter>
+    </ClInclude>
+    <ClInclude Include="AvlTree.h">
+      <Filter>TreeImplementations</Filter>
+    </ClInclude>
+    <ClInclude Include="AvlTreeNode.h">
+      <Filter>TreeImplementations</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryTree.h">
+      <Filter>TreeImplementations</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTree.h">
+      <Filter>TreeImplementations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -73,6 +91,21 @@
     </ClCompile>
     <ClCompile Include="SelectionSort.cpp">
       <Filter>Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryTreeNode.cpp">
+      <Filter>TreeImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="AvlTree.cpp">
+      <Filter>TreeImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="AvlTreeNode.cpp">
+      <Filter>TreeImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryTree.cpp">
+      <Filter>TreeImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearchTree.cpp">
+      <Filter>TreeImplementations</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

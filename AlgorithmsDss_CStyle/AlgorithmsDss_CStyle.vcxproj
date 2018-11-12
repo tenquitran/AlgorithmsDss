@@ -79,6 +79,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AvlTreeNode.h" />
+    <ClInclude Include="AvlTree.h" />
+    <ClInclude Include="BinarySearchTree.h" />
+    <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="BinaryTreeNode.h" />
     <ClInclude Include="Dijkstra_ShortestPaths.h" />
     <ClInclude Include="GraphBase.h" />
     <ClInclude Include="GraphMixedAdjLists.h" />
@@ -89,6 +94,11 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AvlTreeNode.cpp" />
+    <ClCompile Include="AvlTree.cpp" />
+    <ClCompile Include="BinarySearchTree.cpp" />
+    <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="BinaryTreeNode.cpp" />
     <ClCompile Include="Dijkstra_ShortestPaths.cpp" />
     <ClCompile Include="entryPoint.cpp" />
     <ClCompile Include="GraphBase.cpp" />

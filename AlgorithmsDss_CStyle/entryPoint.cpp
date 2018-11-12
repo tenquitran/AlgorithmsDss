@@ -12,6 +12,18 @@ using namespace AlgorithmsDss_CStyle;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+    // TODO: temp; testing operations with AVL tree nodes
+#if 0
+    AvlTreeNode a;
+    AvlTreeNode *pA = &a;
+
+    pA->m_pRight = new AvlTreeNode();
+
+    AvlTreeNode *pC = dynamic_cast<AvlTreeNode *>(pA->m_pRight);
+
+    int tmp3 = 1;
+#endif
+
     // CommonLib test.
 #if 0
     try
@@ -43,6 +55,12 @@ int _tmain(int argc, _TCHAR* argv[])
         std::cerr << ex.message() << '\n';
     }
 #endif
+
+    AvlTree avlTree;
+
+    avlTree.insert(50);
+    avlTree.insert(30);
+    avlTree.insert(10);
 
     int arr[] = {12, 4, 7, -1, 5};
 

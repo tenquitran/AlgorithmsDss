@@ -17,6 +17,7 @@
 
 #include <memory>
 #include <limits>
+#include <algorithm>
 
 #include "../CommonLib/CommonLib.h"
 
@@ -31,3 +32,10 @@
 
 // Graph algorithms.
 #include "Dijkstra_ShortestPaths.h"
+
+// Tree implementations.
+#include "BinaryTreeNode.h"
+#include "BinaryTree.h"
+#include "BinarySearchTree.h"
+#include "AvlTreeNode.h"
+#include "AvlTree.h"
