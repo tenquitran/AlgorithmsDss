@@ -15,6 +15,9 @@ namespace AlgorithmsDss_CStyle
         // Throws: std::bad_alloc
         AvlTreeNode* insert(int key);
 
+        // Calculate height of the (sub)tree rooted at the specified node.
+        int getTreeHeight(AvlTreeNode* pNode) const;
+
     private:
         // Recalculate height of the node.
         void recalculateNodeHeight(AvlTreeNode* pNode);

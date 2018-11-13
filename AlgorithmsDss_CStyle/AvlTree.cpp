@@ -19,6 +19,16 @@ AvlTree::~AvlTree()
     assert(false);
 }
 
+int AvlTree::getTreeHeight(AvlTreeNode* pNode) const
+{
+    if (!pNode)
+    {
+        return 0;
+    }
+
+    return ((std::max)(getTreeHeight(pNode->m_pLeft), getTreeHeight(pNode->m_pRight)) + 1);
+}
+
 void AvlTree::recalculateNodeHeight(AvlTreeNode* pNode)
 {
 #if 1
@@ -61,6 +71,11 @@ int AvlTree::calculateBalanceFactor(AvlTreeNode* pNode) const
 
 AvlTreeNode* AvlTree::insert(int key)
 {
+    // TODO: temp
+#if 1
+    int height1 = getTreeHeight(m_pRoot);
+#endif
+
     if (!m_pRoot)
     {
         // Insert root node.
@@ -105,6 +120,11 @@ AvlTreeNode* AvlTree::insert(int key)
 
     }   // Find a place for node insertion.
 
+#if 0
+    // Update height of the node.
+    recalculateNodeHeight(pNewRoot);
+#endif
+
     // Rebalance the tree if required.
 
     if (insertedToRight)
@@ -138,15 +158,14 @@ AvlTreeNode* AvlTree::insert(int key)
         }
     }
 
+    // TODO: temp
+#if 1
+    int height2 = getTreeHeight(m_pRoot);
+#endif
+
+#if 1
     // Update height of the node.
     recalculateNodeHeight(pNewRoot);
-
-    // TODO: temp
-#if 0
-    if (30 == key)
-    {
-        recalculateNodeHeight(m_pRoot);
-    }
 #endif
 
     return pNewRoot;
